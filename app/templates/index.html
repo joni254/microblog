@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+
+
+{%block content%}
+<div>My Blog: <a href="{{url_for('login')}}">Login</a></div>
+<hr>
+
+<h5>hello {{user.username}}.</h5>
+
+{%for post in posts%}
+<div><p>{{post.author.username}} Posted:<br>{{post.body}}</p></div>
+{%endfor%}
+
+{%endblock%}
