@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+        {% if title %}
+        <title>My BLOG-{{ title }}</title>
+        {% else %}
+        <title>Blog Continuation</title>
+        {% endif %}
+
+{% block content %}
+        <h4>Hello {{current_user.username}}!</h4>
+        {% for tweet in tweets %}
+        <p><b>{{tweet.author.username}}</b> says:</p>
+        <p> &nbsp;{{tweet.post}} </p>
+        {% endfor %}
+
+{% endblock  %}
+
+
+        
