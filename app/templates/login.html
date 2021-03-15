@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<<<<<<< HEAD
+=======
+
+<div>My Blog: <a href="{{('index')}}">Home</a></div>
+<hr>
+
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
 <form action="" method="POST" novalidate>
     {{form.hidden_tag()}}
     <p>
         {{form.username.label}}<br>
+<<<<<<< HEAD
         {{form.username(size=32)}}<br>
         {% for error in form.username.errors %}
         <span style="color: brown;">[{{error}}]</span>
@@ -19,10 +27,31 @@
     </p>
     <p>
         {{form.remember_me()}} {{form.remember_me.label}}
+=======
+        {{form.username(size = 32)}}
+        {% for error in form.username.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {%endfor%}
+    </p>
+    <p>
+        {{form.password.label}}<br>
+        {{form.password(size=32)}}
+        {%for error in form.password.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %}
+    </p>
+    <p>
+        {{form.remember_me()}}{{form.remember_me.label}}
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
     </p>
     <p>
         {{form.submit()}}
     </p>
 
 </form>
+<<<<<<< HEAD
 {% endblock %}
+=======
+
+{% endblock  %}
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4

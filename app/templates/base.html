@@ -7,6 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
         {% if title %}
         <title>My BLOG-{{ title }}</title>
         {% else %}
@@ -16,11 +17,23 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+=======
+
+        {%if title%}
+        <title>{{title}} Blog</title>
+        {%else%}
+        <title>Blog-continuation</title>
+        {%endif%}
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+<<<<<<< HEAD
         <a href="{{url_for('index')}}">Home</a>&nbsp;<a href="{{url_for('login')}}">Login</a>&nbsp;<a href="{{url_for('logout')}}">Logout</a>
         <hr>
         {% with messages = get_flashed_messages() %}
@@ -31,15 +44,39 @@
             <li>{{message}}</li>
             {% endfor %}
         </ul>
+=======
+        {% with messages = get_flashed_messages()%}
+        {% if messages %}
+        
+        <div class="alert alert-danger" role="alert">
+        {% for message in messages  %}
+        {{ message }}
+        {% endfor %}
+        </div>
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
         
         {% endif %}
         {% endwith %}
 
+<<<<<<< HEAD
         {% block content %}
         {% endblock  %}
       
 
         
         <script src="" async defer></script>
+=======
+
+
+
+       <div class="container">
+           {%block content%}
+           {% endblock %}
+       </div>
+        <script src="" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
     </body>
 </html>

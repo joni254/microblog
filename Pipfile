@@ -5,11 +5,17 @@ name = "pypi"
 
 [packages]
 flask = "*"
+<<<<<<< HEAD
 python-dotenv = "*"
 flask-wtf = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
 psycopg2 = "*"
+=======
+flask-wtf = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
 flask-login = "*"
 
 [dev-packages]

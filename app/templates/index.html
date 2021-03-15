@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
         {% if title %}
         <title>My BLOG-{{ title }}</title>
@@ -16,3 +17,20 @@
 
 
         
+=======
+{%extends "base.html"%}
+
+
+
+{%block content%}
+<div>My Blog: <a href="{{url_for('login')}}">Login</a></div>
+<hr>
+
+<h5>hello {{user.username}}.</h5>
+
+{%for post in posts%}
+<div><p>{{post.author.username}} Posted:<br>{{post.body}}</p></div>
+{%endfor%}
+
+{%endblock%}
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4

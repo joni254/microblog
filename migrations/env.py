@@ -5,7 +5,10 @@ from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+<<<<<<< HEAD
 from flask import current_app
+=======
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
 
 from alembic import context
 
@@ -22,6 +25,10 @@ logger = logging.getLogger('alembic.env')
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
+<<<<<<< HEAD
+=======
+from flask import current_app
+>>>>>>> f45ac340741527f164a39a4937c29fdef26f15a4
 config.set_main_option(
     'sqlalchemy.url',
     str(current_app.extensions['migrate'].db.engine.url).replace('%', '%%'))
