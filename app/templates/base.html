@@ -21,8 +21,16 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <a href="{{url_for('index')}}">Home</a>&nbsp;<a href="{{url_for('login')}}">Login</a>&nbsp;<a href="{{url_for('logout')}}">Logout</a>
-        <hr>
+        <div>
+            <a href="{{url_for('index')}}">Home</a>&nbsp;
+            {% if current_user.is_anonymous %}
+            <a href="{{url_for('login')}}">Login</a>&nbsp;
+            {%else%}
+            <a href="{{url_for('logout')}}">Logout</a>
+            {%endif%}
+            <hr>
+        </div>
+
         {% with messages = get_flashed_messages() %}
         {% if messages %}
 
