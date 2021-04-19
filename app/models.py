@@ -13,7 +13,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), index= True, unique= True)
     email = db.Column(db.String(128), index = True, unique = True)
     password_hash = db.Column(db.String(128))
-    posts = db.relationship('Post', backref = 'author', lazy = 'dynamic')
+    tweets = db.relationship('Tweet', backref = 'author', lazy = 'dynamic')
 
     def __repr__(self):
         return 'User is {}'.format(self.username)
@@ -24,11 +24,11 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash,password)
 
-class Post(db.Model):
+class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     body = db.Column(db.String(128), index = True, unique = True)
     timestamp = db.Column(db.DateTime, index = True, default = datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return 'Post is {}'.format(self.body)
+        return 'Tweet is {}'.format(self.body)
